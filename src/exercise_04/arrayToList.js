@@ -12,10 +12,10 @@ export default function arrayToList(array) {
     throw new Error('Creating list from empty array');
   }
   let head = { value: array[0], next: null };
-  let obj = head;
-  for (let i = 1; i < array.lenth; i += 1) {
-    obj.next = { value: array[i], next: null };
-    obj = obj.next;
+  let lj = head;
+  for (let i = 1; i < array.length; i += 1) {
+    lj.next = { value: array[i], next: null };
+    lj = lj.next;
   }
   return head;
 }
