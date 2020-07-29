@@ -15,24 +15,30 @@ export default class Vector {
   // PLEASE DELETE THIS LINE AND ADD YOUR IMPLEMENTATION HERE
 
   constructor(x, y) {
-    this.x = x;
-    this.y = y;
+    this._x = x;
+    this._y = y;
+  }
+
+  get x() {
+    return this._x;
+  }
+
+  get y() {
+    return this._y;
   }
 
   static plus(a, b) {
-    this.x = a.x + b.x;
-    this.y = a.y + b.y;
-    return this;
+    const p = new Vector(a.x + b.x, a.y + b.y);
+    return p;
   }
 
   static minus(a, b) {
-    this.x = a.x - b.x;
-    this.y = a.y - b.y;
-    return this;
+    const m = new Vector(a.x - b.x, a.y - b.y);
+    return m;
   }
 
   distance() {
-    const d = this.x * this.x + this.y * this.y;
+    const d = this._x * this._x + this._y * this._y;
     return Math.sqrt(d);
   }
 }
